@@ -1,8 +1,5 @@
 package com.ProjetoPerformance.Ecommerce.entities;
 
-import java.util.Map;
-
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,24 +13,20 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "affiliate_product")
+@Table(name= "categorie")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@EqualsAndHashCode(of ="id")
-public class AffiliateProduct {
+@EqualsAndHashCode(of = "id")
+public class Category {
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	private Long name;
 	
-	private String name;
-	private String description;
-	@Column(unique = true)
-	private String linkAffiliate;
-	private String imgUrl;
-	
-	 @OneToMany(mappedBy = "category") 
-	    private Map<Long,AffiliateProduct> affiliateProducts; 
+	@OneToMany
+	private AffiliateProduct Affproduct;
+
 }
-	
