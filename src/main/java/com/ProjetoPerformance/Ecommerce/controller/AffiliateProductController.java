@@ -40,6 +40,5 @@ public class AffiliateProductController {
 		service.deleteProduct(id);
 		return new ResponseEntity<>( HttpStatus.NO_CONTENT);
 	}
-	
-	
+
 }
