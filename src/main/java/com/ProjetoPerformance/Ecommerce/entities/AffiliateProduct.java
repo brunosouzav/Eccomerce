@@ -1,5 +1,6 @@
 package com.ProjetoPerformance.Ecommerce.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,8 +23,11 @@ public class AffiliateProduct {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	private Long id;
+	
 	private String name;
 	private String description;
+	@Column(unique = true)
 	private String linkAffiliate;
 	private String imgUrl;
 }
+	
